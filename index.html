@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قوانين سيرفر مدينة النيل</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#080604;--surface:#16100a;--ink:#f4f0e8;--muted:#b4a68e;--line:#3b2a14;--accent:#d6a64f;--accent-ink:#140d04;--warn:#e8c37a;--warn-bg:#2a1e0c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){}
+:root[data-theme="light"]{--bg:#f4f1ea;--surface:#fffdf8;--ink:#1a1308;--muted:#6a5a3f;--line:#ddd2b8;--accent:#8a5f14;--accent-ink:#fff;--warn:#7a4f0c;--warn-bg:#f3e6c8}
+html{color-scheme:dark;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+:root[data-theme="dark"]{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;font-size:17px;line-height:1.85}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+header{padding:56px 20px 36px;max-width:760px;margin:0 auto;border-bottom:2px solid var(--accent);background:linear-gradient(to top,rgba(214,166,79,.14),transparent 70%)}
+.logo{display:block;width:88px;height:88px;border-radius:50%;margin:0 0 18px;box-shadow:0 0 0 2px var(--accent),0 0 28px rgba(214,166,79,.35)}
+h1{font-size:clamp(34px,8vw,56px);line-height:1.2;margin:0 0 14px;font-weight:800}
+.lead{margin:0;color:var(--muted);max-width:60ch}
+.lead b{color:var(--ink)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav div{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;gap:8px;overflow-x:auto;white-space:nowrap}
+nav a{flex:none;padding:4px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-size:15px;background:var(--surface)}
+nav a:hover,nav a:focus-visible{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);outline:none}
+main{max-width:760px;margin:0 auto;padding:12px 20px 64px}
+section{padding-top:36px}
+h2{font-size:26px;margin:0 0 6px;font-weight:800;color:var(--accent)}
+ol{list-style:none;margin:0;padding:0}
+li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+li:first-child{border-top:0}
+.n{font-weight:800;font-size:22px;color:var(--accent);line-height:1.5;text-align:center;border-inline-end:1px solid var(--line);padding-inline-end:10px}
+li h3{margin:0 0 2px;font-size:19px;font-weight:700}
+li p{margin:0;color:var(--muted)}
+.pen{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.pen li{display:block;padding:4px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:15px}
+.note{margin-top:18px;padding:14px 16px;background:var(--warn-bg);color:var(--warn);border-inline-start:4px solid var(--warn);border-radius:6px}
+.ticket{margin-top:12px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.ticket p{margin:0 0 8px}
+footer{max-width:760px;margin:0 auto;padding:36px 20px 56px;text-align:center;border-top:2px solid var(--accent)}
+footer strong{display:block;font-size:24px;margin-bottom:8px}
+footer p{margin:6px 0;color:var(--muted)}
+@media (max-width:480px){li{grid-template-columns:34px 1fr;gap:10px}.n{font-size:19px}}
+</style>
+</head>
+<body>
+<header>
+<img class="logo" src="data:image/webp;base64,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" alt="شعار مدينة النيل NC" width="88" height="88">
+<h1>قوانين سيرفر مدينة النيل 🌊</h1>
+<p class="lead">أهلاً بيكم في مدينة النيل. <b>دخولك للسيرفر يعني إنك قرأت القوانين ووافقت على الالتزام بيها.</b> أي مخالفة قد تؤدي إلى <b>تحذير، سجن إداري، كيك، باند أو عقوبة أخرى</b> حسب نوع المخالفة وتقدير الإدارة.</p>
+</header>
+<nav><div>
+<a href="#general">قوانين عامة</a><a href="#rp">قوانين الـRP</a><a href="#driving">القيادة</a><a href="#gov">القطاعات الحكومية</a><a href="#economy">الاقتصاد</a><a href="#voice">الصوت والديسكورد</a><a href="#penalties">العقوبات</a><a href="#complaints">الشكاوى</a>
+</div></nav>
+<main>
+
+<section id="general"><h2>أولاً | قوانين عامة</h2><ol>
+<li><span class="n">1</span><div><h3>الاحترام واجب</h3><p>يُمنع السب، الشتم، الإهانة، العنصرية، التنمر أو التقليل من أي لاعب.</p></div></li>
+<li><span class="n">2</span><div><h3>ممنوع استغلال الثغرات</h3><p>أي Bug أو Glitch أو ثغرة يتم اكتشافها يجب إبلاغ الإدارة عنها، ويُمنع استغلالها للحصول على أفضلية.</p></div></li>
+<li><span class="n">3</span><div><h3>ممنوع الغش أو استخدام البرامج الخارجية</h3><p>يُمنع استخدام أي Cheat أو Hack أو Mod يعطي اللاعب أفضلية غير عادلة.</p></div></li>
+<li><span class="n">4</span><div><h3>ممنوع انتحال شخصية الإدارة</h3><p>يُمنع ادعاء أنك من الإدارة أو استخدام اسم/هوية شخص آخر بهدف خداع اللاعبين.</p></div></li>
+<li><span class="n">5</span><div><h3>ممنوع نشر المحتوى غير المناسب</h3><p>يُمنع نشر أي محتوى مخالف للقوانين أو الآداب العامة داخل السيرفر أو الديسكورد.</p></div></li>
+<li><span class="n">6</span><div><h3>قرارات الإدارة تُحترم</h3><p>في حالة وجود مشكلة أو اعتراض، استخدم نظام التذاكر بدلاً من إثارة المشاكل أو الجدال داخل السيرفر.</p></div></li>
+</ol></section>
+
+<section id="rp"><h2>ثانياً | قوانين الـRP 🎭</h2><ol>
+<li><span class="n">7</span><div><h3>الالتزام بالشخصية</h3><p>يجب عليك التصرف داخل اللعبة بما يتناسب مع شخصيتك وقصة الـRP الخاصة بيك.</p></div></li>
+<li><span class="n">8</span><div><h3>ممنوع Meta Gaming (MG)</h3><p>استخدام معلومات حصلت عليها خارج اللعبة داخل الـRP ممنوع.</p></div></li>
+<li><span class="n">9</span><div><h3>ممنوع Power Gaming (PG)</h3><p>يُمنع القيام بأفعال غير منطقية أو إجبار لاعب آخر على نتيجة معينة بدون إعطائه فرصة للتفاعل.</p></div></li>
+<li><span class="n">10</span><div><h3>ممنوع Random DeathMatch (RDM)</h3><p>يُمنع قتل لاعب بدون سبب RP واضح ومبرر.</p></div></li>
+<li><span class="n">11</span><div><h3>ممنوع Vehicle DeathMatch (VDM)</h3><p>يُمنع استخدام المركبة كسلاح لدهس اللاعبين بدون سبب RP.</p></div></li>
+<li><span class="n">12</span><div><h3>ممنوع Fail RP</h3><p>يجب الالتزام بالمنطق والواقعية أثناء لعب الأدوار وعدم القيام بتصرفات تكسر الـRP.</p></div></li>
+<li><span class="n">13</span><div><h3>ممنوع الخروج من الشخصية أثناء السيناريو</h3><p>يُمنع تحويل الموقف إلى نقاش خارج الـRP أثناء حدوث السيناريو.</p></div></li>
+<li><span class="n">14</span><div><h3>ممنوع Combat Logging</h3><p>يُمنع الخروج من السيرفر أثناء مطاردة أو سيناريو أو مشكلة قائمة بهدف الهروب من نتائجها.</p></div></li>
+<li><span class="n">15</span><div><h3>ممنوع Revenge Kill</h3><p>يُمنع العودة للانتقام من لاعب بعد موت شخصيتك أو انتهاء السيناريو.</p></div></li>
+</ol></section>
+
+<section id="driving"><h2>ثالثاً | قوانين القيادة 🚗</h2><ol>
+<li><span class="n">16</span><div><h3>القيادة الواقعية</h3><p>يجب الالتزام بالقيادة المنطقية وعدم القيادة بطريقة عشوائية بدون سبب.</p></div></li>
+<li><span class="n">17</span><div><h3>ممنوع استخدام المركبات بشكل غير منطقي</h3><p>مثل القفزات غير الواقعية أو استخدام مركبة غير مناسبة لمواقف معينة بدون سبب RP.</p></div></li>
+<li><span class="n">18</span><div><h3>احترام المركبات والممتلكات</h3><p>يُمنع تخريب أو سرقة مركبات اللاعبين بدون سبب RP يسمح بذلك.</p></div></li>
+</ol></section>
+
+<section id="gov"><h2>رابعاً | قوانين القطاعات الحكومية 👮</h2><ol>
+<li><span class="n">19</span><div><h3>احترام القطاعات الحكومية</h3><p>يجب احترام أفراد الشرطة، الإسعاف، حرس الحدود وباقي القطاعات داخل الـRP.</p></div></li>
+<li><span class="n">20</span><div><h3>يمنع استغلال الرتبة</h3><p>يُمنع استخدام الصلاحيات الوظيفية لمصلحة شخصية أو للانتقام من اللاعبين.</p></div></li>
+<li><span class="n">21</span><div><h3>الالتزام بالأنظمة الداخلية</h3><p>كل قطاع حكومي له قوانينه وتعليماته الخاصة، ويجب على أعضائه الالتزام بها.</p></div></li>
+<li><span class="n">22</span><div><h3>يمنع استخدام المعلومات الوظيفية خارج إطار الـRP</h3><p>المعلومات التي تحصل عليها من وظيفتك يجب استخدامها بما يتناسب مع السيناريو والـRP.</p></div></li>
+</ol></section>
+
+<section id="economy"><h2>خامساً | الاقتصاد والمعاملات 💰</h2><ol>
+<li><span class="n">23</span><div><h3>ممنوع الاحتيال على اللاعبين خارج الـRP</h3><p>أي عملية نصب أو خداع مخالفة للقوانين العامة للسيرفر سيتم التعامل معها حسب الحالة.</p></div></li>
+<li><span class="n">24</span><div><h3>ممنوع استغلال أخطاء الاقتصاد</h3><p>يُمنع استغلال أي خطأ يؤدي إلى الحصول على أموال أو ممتلكات بشكل غير مشروع.</p></div></li>
+<li><span class="n">25</span><div><h3>ممنوع بيع أو شراء الحسابات</h3><p>يُمنع بيع الحسابات أو المتاجرة بها بدون موافقة الإدارة.</p></div></li>
+</ol></section>
+
+<section id="voice"><h2>سادساً | قوانين الصوت والديسكورد 🎙️</h2><ol>
+<li><span class="n">26</span><div><h3>احترام الجميع في المحادثات الصوتية</h3><p>يُمنع الصراخ، الإزعاج، تشغيل أصوات مزعجة أو استخدام المايك بطريقة تضر بتجربة الآخرين.</p></div></li>
+<li><span class="n">27</span><div><h3>ممنوع نشر الروابط الضارة أو المشبوهة</h3><p>يُمنع إرسال روابط مجهولة أو ملفات قد تضر بالأعضاء.</p></div></li>
+<li><span class="n">28</span><div><h3>ممنوع الإعلان بدون إذن</h3><p>يُمنع نشر إعلانات أو روابط لسيرفرات أو مشاريع أخرى بدون موافقة الإدارة.</p></div></li>
+<li><span class="n">29</span><div><h3>الالتزام بقوانين الديسكورد</h3><p>جميع أعضاء مدينة النيل ملزمون أيضاً بقوانين Discord وسياسات المنصة.</p></div></li>
+</ol></section>
+
+<section id="penalties"><h2>سابعاً | العقوبات ⚠️</h2>
+<p>العقوبة تختلف حسب <b>نوع المخالفة، تكرارها، وتأثيرها على السيرفر</b>، وقد تشمل:</p>
+<ul class="pen ol-like" style="padding:0;list-style:none">
+<li>تحذير</li><li>سجن إداري</li><li>سحب أموال أو ممتلكات مكتسبة بطريقة مخالفة</li><li>سحب رتبة أو وظيفة</li><li>كيك</li><li>باند مؤقت</li><li>باند دائم</li>
+</ul>
+<div class="note"><b>الإدارة لها الحق في اتخاذ الإجراء المناسب حسب الحالة، حتى لو لم تكن المخالفة مذكورة حرفياً في القوانين.</b></div>
+</section>
+
+<section id="complaints"><h2>أخيراً | الشكاوى والاستفسارات 🎫</h2>
+<div class="ticket"><p>لو واجهتك مشكلة أو تعرضت لمخالفة، <b>لا تدخل في مشاجرة مع اللاعب.</b></p>
+<p>📩 افتح تذكرة من نظام التذاكر وأرسل التفاصيل والأدلة المتوفرة عندك.</p>
+<p><b>نتعامل مع كل شكوى بسرية ونراجع الحالة قبل اتخاذ القرار.</b></p></div>
+</section>
+</main>
+<footer>
+<strong>🌊 مدينة النيل</strong>
+<p>احترم غيرك، التزم بالـRP، واستمتع بتجربتك ❤️</p>
+<p>القوانين قابلة للتحديث والتعديل من إدارة السيرفر عند الحاجة.</p>
+</footer>
+</body>
+</html>
